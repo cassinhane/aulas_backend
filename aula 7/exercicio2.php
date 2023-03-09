@@ -31,7 +31,7 @@
     $nome[] = "Dalva";
     $nome[] = "Lavinia";
     $nome[] = "Kaua";
-  echo "<ol>";
+   echo "<ol>";
     for($r=0; $r<5; $r++){
         echo "<li> $nome[$r] </li>";
     }
