@@ -4,7 +4,6 @@
     requerido pelo usuário. 
 </p>
 
-
 <?php
     //print_r($_GET);
     //?numero1=10&numero2=20
