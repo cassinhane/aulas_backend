@@ -4,10 +4,13 @@
 
     if(isset($_POST["nome"]) && isset($_POST["descricao"]) && isset($_POST["preco"])){
 
+        //inclui o arquiuvo para salvar a foto do upload
+        require_once "salvar_foto.php";
+
         $nome = $_POST["nome"];
         $descricao = $_POST["descricao"];
         $preco = $_POST["preco"];
-        $foto = "semfoto.png";
+        $foto = $nome_arquivo;
 
         //string com o comando sql para sr executado no db
         $sql = "INSERT INTO `db_catalogo_3infoa`.`produto` (`nome`, `descricao`, `preco`, `foto`) VALUES (?, ?, ?, ?);";
