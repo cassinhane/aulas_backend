@@ -1,28 +1,40 @@
 <?php require_once "consultar_por_id.php" ?>
-<?php require_once "../template/cabecalho.php"; ?>
+<?php require_once "../template/cabecalho.php";  ?>
 
-    <div class="container">
+<div class="container">
 
     <h1>Cadastro de Usuário</h1>
     <hr>
 
-        <form action="<?php echo isset($usuario) ? 'atualizar.php' : 'inserir.php' ?>" method="post" enctype="multipart/form-data">
+    <form 
+    action="<?php echo isset($usuario) ?
+     'atualizar.php' : 'inserir.php' ?>" 
+    method="post"
+    enctype="multipart/form-data"
+    >
 
-            <label for="nome" class="for-label">Nome</label><br>
-            <input class="form-control" type="text" name="nome" id="nome" value="<?php echo $usuario['nome'] ?? ""; ?>"><br>
-            <input type="hidden" name="id" id="id" value="<?php echo $usuario['idusuario'] ?? ""; ?>"><br>
+       <label for="nome" class="form-label">Nome</label><br>
+       <input class="form-control" type="text" name="nome" id="nome" 
+       value="<?php echo $usuario['nome'] ?? ""; ?>">
 
-            <label for="login" class="for-label">Login</label><br>
-            <input class="form-control" type="text" name="login" id="login" value="<?php echo $usuario['login'] ?? ""; ?>"><br>
+       <input type="hidden" name="id" id="id" 
+       value="<?php echo $usuario['idusuario'] ?? ""; ?>"><br>
 
-            <label for="senha" class="for-label">Senha</label><br>
-            <input class="form-control" type="password" name="senha" id="senha" value="<?php echo $usuario['senha'] ?? ""; ?>"><br>
+       <label for="login" class="form-label">Login</label><br>
+       <input class="form-control" type="text"  name="login" id="login" 
+       value="<?php echo $usuario['login'] ?? ""; ?>"><br>
 
-            <label for="foto" class="for-label">Foto</label><br>
-            <input class="form-control" type="file" name="foto" id="foto"><br><br>
+       <label for="senha" class="form-label">Senha</label><br>
+       <input class="form-control" type="password" name="senha" id="senha" 
+       value="<?php echo $usuario['senha'] ?? ""; ?>"><br>
 
-            <button type="submit" class="btn btn-warning">Cadastrar</button>
-        </form>
-    </div>
+       <label for="foto" class="form-label">Foto</label><br>
+       <input class="form-control" type="file" name="foto" id="foto"><br>
 
-    <?php require_once "../template/rodape.php"; ?>
+       <br>
+       <button type="submit" class="btn btn-dark">Cadastrar</button>
+
+    </form>
+</div>
+
+    <?php require_once "../template/rodape.php";  ?>

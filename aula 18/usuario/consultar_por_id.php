@@ -1,33 +1,30 @@
-<?php 
+<?php
 
 require_once "../conexao.php";
 
-//verifica se foi enviado o param pela URL
+//verifica se foi enviado o param id pela URL
 if(isset($_GET['id']))
 {
 
 //pega o valor do id que foi enviado pela URL
-$id =$_GET['id'];
+$id = $_GET['id'];
 
 //String com o comando SQL para ser executado no DB
-$sql = "SELECT * FROM `usuario` WHERE  `idusuario`= ? ;";
-
+$sql = "SELECT * FROM `usuario` WHERE  `idusuario`= ? ; ";
 
 //Prepara o SQL para ser executado no banco de dados
 $comando = $conexao->prepare($sql);
 
-//adciona valores nos parâmetros 
+//adiciona os valores nos parâmetros
 $comando->bind_param("i", $id);
 
-//executa o SQL - comando no bancos de dados
+//executa o SQL - Comando no Banco de Dados
 $comando->execute();
 
-//pegar o comando da consulta
+//pegar o resultado da consulta
 $resultado = $comando->get_result();
 
-//pegar a primeira linha do resultado
+//pegar a primeira linha de resultado
 $usuario = $resultado->fetch_assoc();
 
-
 }
-
