@@ -1,15 +1,15 @@
-<?//php require_once "consultar_por_id.php" ?>
+<?php require_once "consultar_por_id.php" ?>
 <?php require_once "../template/cabecalho.php";  ?>
 
 <div>
+   <div class="container">
     <h1>Escrever nova mensagem</h1>
     <hr>
 
     <form 
     action="<?php echo isset($mensagens) ? 'atualizar.php' : 'inserir.php' ?>" 
     method="post"
-    enctype="multipart/form-data"
-    >
+    enctype="multipart/form-data">
 
        <label for="remetente" >Remetente</label><br>
        <input type="text" name="remetente" id="remetente" value="<?php echo $mensagens['remetente'] ?? ""; ?>"><br>
@@ -29,5 +29,5 @@
        <button type="submit" >Cadastrar</button>
 
     </form>
-
+</div>
     <?php require_once "../template/rodape.php";  ?>

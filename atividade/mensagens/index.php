@@ -1,8 +1,8 @@
 <?php require_once "consultar_todos.php"; ?>
 <?php require_once "../template/cabecalho.php";  ?>
 
-  <div class="container">
-        <h1>Mensagens enviadas</h1>
+  <div class="container" >
+        <h1 class="bg-danger-subtle text-black text-center p-4">Mensagens enviadas</h1>
         <hr>
         <div class="text-end">
             <a href="form.php" class="btn btn-success">
@@ -17,6 +17,7 @@
                 <th scope="col">Destinatário</th>
                 <th scope="col">Assunto</th>
                 <th scope="col">Conteúdo</th>
+                <th class="text-end" scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -29,7 +30,7 @@
                 <td><?php echo $mensagem['conteudo']; ?></td>
                 <td class="text-end">
                   <a href="excluir.php?id=<?php echo $mensagem['id']; ?>" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i> Excluir</a>
-                  <a href="atualizar.php?id=<?php echo $mensagem['id']; ?>" class="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i> Atualizar</a>
+                  <a href="form.php?id=<?php echo $mensagem['id']; ?>" class="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i> Atualizar</a>
                 </td>
             </tr>
         <?php } ?>

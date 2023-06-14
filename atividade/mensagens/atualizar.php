@@ -8,13 +8,13 @@ if(isset($_POST["remetente"]) && isset($_POST["destinatario"])
 {
 
 //inclui o arquivo para salvar a foto do upload
-require_once "salvar_foto.php";
-
-$id =        $_POST["id"];        
+//require_once "salvar_foto.php";
+        
 $remetente =      $_POST["remetente"];
 $destinatario = $_POST["destinatario"];
 $assunto =     $_POST["assunto"];
 $conteudo =     $_POST["conteudo"];
+$id =        $_POST["id"];
 
 //String com o comando SQL para ser executado no DB
 $sql = "UPDATE mensagens SET 
@@ -25,7 +25,7 @@ WHERE  `id`= ? ";
 $comando = $conexao->prepare($sql);
 
 //adiciona os valores nos parâmetros
-$comando->bind_param("issds", $id, $remetente, $destinatario, $assunto, $conteudo);
+$comando->bind_param("ssssi", $remetente, $destinatario, $assunto, $conteudo, $id);
 
 //executa o SQL - Comando no Banco de Dados
 $comando->execute();

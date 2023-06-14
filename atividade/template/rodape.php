@@ -1,6 +1,6 @@
 <hr>
 
-<footer class="bg-dark text-white text-center p-4">
+<footer class="bg-danger-subtle text-black text-center p-4">
       Meu Catálogo de Produtos
 </footer>
 
